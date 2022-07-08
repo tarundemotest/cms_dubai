@@ -23038,7 +23038,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "App"
+});
 
 /***/ }),
 
@@ -23073,9 +23075,11 @@ var _hoisted_5 = {
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Home");
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Pages");
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("=== ");
 
-var _hoisted_8 = {
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Pages");
+
+var _hoisted_9 = {
   "class": "container mt-5"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -23105,18 +23109,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     "exact-active-class": "active",
-    to: "/pageslist",
+    to: "/pagesist",
     "class": "nav-item nav-link"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_7];
+      return [_hoisted_8];
     }),
     _: 1
     /* STABLE */
 
-  })])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view)])]);
+  })])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view)])]);
 }
 
 /***/ }),
@@ -23136,38 +23140,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-axios */ "./node_modules/vue-axios/dist/vue-axios.esm.min.js");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.mjs");
-// require('./bootstrap');
-// import { createApp } from 'vue';
-// import * as VueRouter from 'vue-router';
-// import VueAxios from 'vue-axios';
-// import axios from 'axios';
-// import {routes} from './routes';
-// Vue.use(VueRouter);
-// Vue.use(VueAxios, axios);
-// import CompaniesIndex from './components/App.vue';
-// createApp({
-//     components: {
-//         CompaniesIndex
-//     }
-// }).use(routes).mount('#app')
-// require('./bootstrap');
-// import App from './components/App.vue';
-// import VueAxios from 'vue-axios';
-// import * as VueRouter from 'vue-router';
-// import axios from 'axios';
-// import { routes } from './routes';
-// /**
-//  * Next, we will create a fresh Vue application instance and attach it to
-//  * the page. Then, you may begin adding components to this application
-//  * or customize the JavaScript scaffolding to fit your unique needs.
-//  */
-// Vue.use(VueRouter);
-// Vue.use(VueAxios, axios);
-// const app = new Vue({
-//     el: '#app',
-//     router: router,
-//     render: h => h(App),
-// });
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -23183,10 +23155,7 @@ var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)({
   }
 });
 app.use(vue_axios__WEBPACK_IMPORTED_MODULE_4__["default"], (axios__WEBPACK_IMPORTED_MODULE_3___default()), vue_router__WEBPACK_IMPORTED_MODULE_5__);
-app.use(_routes__WEBPACK_IMPORTED_MODULE_2__.routes);
-app.mount("#app"); // const app = createApp({ router: routes})
-// app.component('hello-world', App)
-// app.mount('#app')
+app.mount("#app");
 
 /***/ }),
 
