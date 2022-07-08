@@ -6,7 +6,7 @@
                 <div class="collapse navbar-collapse">
                     <div class="navbar-nav">
                         <router-link exact-active-class="active" to="/" class="nav-item nav-link">Home</router-link>
-                        <router-link exact-active-class="active" to="/category" class="nav-item nav-link">Category</router-link>
+                        <router-link exact-active-class="active" to="/pages" class="nav-item nav-link">Pages</router-link>
                     </div>
                 </div>
             </div>

@@ -1,12 +1,12 @@
 <template>
     <div class="row">
         <div class="col-12 mb-2 text-end">
-            <router-link :to='{name:"categoryAdd"}' class="btn btn-primary">Create</router-link>
+            <router-link :to='{name:"pageAdd"}' class="btn btn-primary">Create</router-link>
         </div>
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Category</h4>
+                    <h4>page</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -14,19 +14,19 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Title</th>
+                                    <th>Page Title</th>
                                     <th>Description</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody v-if="categories.length > 0">
-                                <tr v-for="(category,key) in categories" :key="key">
-                                    <td>{{ category.id }}</td>
-                                    <td>{{ category.title }}</td>
-                                    <td>{{ category.description }}</td>
+                                <tr v-for="(page,key) in categories" :key="key">
+                                    <td>{{ page.id }}</td>
+                                    <td>{{ page.title }}</td>
+                                    <td>{{ page.description }}</td>
                                     <td>
-                                        <router-link :to='{name:"categoryEdit",params:{id:category.id}}' class="btn btn-success">Edit</router-link>
-                                        <button type="button" @click="deleteCategory(category.id)" class="btn btn-danger">Delete</button>
+                                        <router-link :to='{name:"pageEdit",params:{id:page.id}}' class="btn btn-success">Edit</router-link>
+                                        <button type="button" @click="deletepage(page.id)" class="btn btn-danger">Delete</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -56,16 +56,16 @@ export default {
     },
     methods:{
         async getCategories(){
-            await this.axios.get('/api/category').then(response=>{
+            await this.axios.get('/api/page').then(response=>{
                 this.categories = response.data
             }).catch(error=>{
                 console.log(error)
                 this.categories = []
             })
         },
-        deleteCategory(id){
-            if(confirm("Are you sure to delete this category ?")){
-                this.axios.delete(`/api/category/${id}`).then(response=>{
+        deletepage(id){
+            if(confirm("Are you sure to delete this page ?")){
+                this.axios.delete(`/api/page/${id}`).then(response=>{
                     this.getCategories()
                 }).catch(error=>{
                     console.log(error)

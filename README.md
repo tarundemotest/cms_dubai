@@ -6,6 +6,7 @@ This is Demo Test Project for an interview
 <ul>
 <li>Run Command <b>composer install</b> for install Vendor file</li>
 <li>Run Command <b>composer require laravel/ui</b> for install Laravel UI</li>
+<li>Run Command <b>php artisan ui vue</b> for install Laravel UI</li>
 <li>Run Command <b>npm install</b> for install Npm</li>
 <li>Run Command <b>npm install vue vue-router vue-axios --save</b> for install Vue and Axios</li>
 <li>Run Command <b>npm install laravel-mix@latest --save-dev</b> for install Laravel Mix</li>

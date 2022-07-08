@@ -3,7 +3,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Add Category</h4>
+                    <h4>Add page</h4>
                 </div>
                 <div class="card-body">
                     <form @submit.prevent="create">
@@ -11,13 +11,13 @@
                             <div class="col-12 mb-2">
                                 <div class="form-group">
                                     <label>Title</label>
-                                    <input type="text" class="form-control" v-model="category.title">
+                                    <input type="text" class="form-control" v-model="page.title">
                                 </div>
                             </div>
                             <div class="col-12 mb-2">
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <input type="text" class="form-control" v-model="category.description">
+                                    <input type="text" class="form-control" v-model="page.description">
                                 </div>
                             </div>
                             <div class="col-12">
@@ -33,10 +33,10 @@
 
 <script>
 export default {
-    name:"add-category",
+    name:"add-page",
     data(){
         return {
-            category:{
+            page:{
                 title:"",
                 description:""
             }
@@ -44,8 +44,8 @@ export default {
     },
     methods:{
         async create(){
-            await this.axios.post('/api/category',this.category).then(response=>{
-                this.$router.push({name:"categoryList"})
+            await this.axios.post('/api/page',this.page).then(response=>{
+                this.$router.push({name:"pageList"})
             }).catch(error=>{
                 console.log(error)
             })

@@ -3,7 +3,7 @@ import Vue from 'vue'
 
 window.Vue = require('vue');
  
-import App from './App.vue';
+import App from './components/App.vue';
 import * as VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';

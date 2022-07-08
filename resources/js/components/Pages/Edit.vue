@@ -3,7 +3,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Update Category</h4>
+                    <h4>Update page</h4>
                 </div>
                 <div class="card-body">
                     <form @submit.prevent="update">
@@ -11,13 +11,13 @@
                             <div class="col-12 mb-2">
                                 <div class="form-group">
                                     <label>Title</label>
-                                    <input type="text" class="form-control" v-model="category.title">
+                                    <input type="text" class="form-control" v-model="page.title">
                                 </div>
                             </div>
                             <div class="col-12 mb-2">
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <input type="text" class="form-control" v-model="category.description">
+                                    <input type="text" class="form-control" v-model="page.description">
                                 </div>
                             </div>
                             <div class="col-12">
@@ -33,10 +33,10 @@
 
 <script>
 export default {
-    name:"update-category",
+    name:"update-page",
     data(){
         return {
-            category:{
+            page:{
                 title:"",
                 description:"",
                 _method:"patch"
@@ -44,21 +44,21 @@ export default {
         }
     },
     mounted(){
-        this.showCategory()
+        this.showpage()
     },
     methods:{
-        async showCategory(){
-            await this.axios.get(`/api/category/${this.$route.params.id}`).then(response=>{
+        async showpage(){
+            await this.axios.get(`/api/page/${this.$route.params.id}`).then(response=>{
                 const { title, description } = response.data
-                this.category.title = title
-                this.category.description = description
+                this.page.title = title
+                this.page.description = description
             }).catch(error=>{
                 console.log(error)
             })
         },
         async update(){
-            await this.axios.post(`/api/category/${this.$route.params.id}`,this.category).then(response=>{
-                this.$router.push({name:"categoryList"})
+            await this.axios.post(`/api/page/${this.$route.params.id}`,this.page).then(response=>{
+                this.$router.push({name:"pageList"})
             }).catch(error=>{
                 console.log(error)
             })
