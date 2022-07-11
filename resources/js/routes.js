@@ -33,7 +33,12 @@ const routes = [
         name: 'pagesTree',
         path: '/pagestree',
         component: PagesTree
-    }
+    },
+    {
+        name: 'PageTreeLoop',
+        path: '/pagestree/:slug',
+        component: PagesTree
+    },
   ];
   
   export default createRouter({

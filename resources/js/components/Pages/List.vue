@@ -6,7 +6,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>page</h4>
+                    <h4>Pages List</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -23,10 +23,10 @@
                                 <tr v-for="(page,key) in pages" :key="key">
                                     <td>{{ page.id }}</td>
                                     <td>{{ page.title }}</td>
-                                    <td>{{ page.description }}</td>
+                                    <td>{{ page.content }}</td>
                                     <td>
-                                        <router-link :to='{name:"PagesEdit",params:{id:page.id}}' class="btn btn-success">Edit</router-link>
-                                        <button  type="button" @click="deletepage(page.id)" class="btn btn-danger ms-1">Delete</button>
+                                        <router-link :to='{name:"PagesEdit",params:{id:page.id}}' title="Edit is Page ?" class="btn btn-success">Edit</router-link>
+                                        <button data-bs-toggle="tooltip" title="Delete is Page ?" type="button" @click="deletepage(page.id)" class="btn btn-danger ms-1">Delete</button>
                                     </td>
                                 </tr>
                             </tbody>

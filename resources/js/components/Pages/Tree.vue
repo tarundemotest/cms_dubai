@@ -6,28 +6,21 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>page</h4>
+                    <h4>Page Tree</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    
                                     <th>Page Title</th>
-                                    <th>Description</th>
-                                    <th>Actions</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody v-if="pages.length > 0">
                                 <tr v-for="(page,key) in pages" :key="key">
-                                    <td>{{ page.id }}</td>
-                                    <td>{{ page.title }}</td>
-                                    <td>{{ page.description }}</td>
-                                    <td>
-                                        <router-link :to='{name:"PagesEdit",params:{id:page.id}}' class="btn btn-success">Edit</router-link>
-                                        <button  type="button" @click="deletepage(page.id)" class="btn btn-danger ms-1">Delete</button>
-                                    </td>
+                                    <td><router-link exact-active-class="active" :to='{name:"PageTreeLoop",params:{slug:page.slug}}' class="nav-item nav-link">{{ page.title }}</router-link></td>
                                 </tr>
                             </tbody>
                             <tbody v-else>

@@ -23265,6 +23265,10 @@ var routes = [{
   name: 'pagesTree',
   path: '/pagestree',
   component: PagesTree
+}, {
+  name: 'PageTreeLoop',
+  path: '/pagestree/:slug',
+  component: PagesTree
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHistory)(),

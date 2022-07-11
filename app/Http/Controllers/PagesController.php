@@ -40,6 +40,7 @@ class PagesController extends Controller
 
         $page = new Pages; 
         $page->title=$value['title'];
+        $page->parent_id=$value['parent_id'];
         $page->content=$value['content'];
         $page->slug=\Str::slug($value['title']);
         $page->save();
@@ -67,7 +68,7 @@ class PagesController extends Controller
     public function edit(Pages $page)
     {
       
-        return response()->json(['code'=>200,'content'=>$page->content,'title'=>$page->title]);
+        return response()->json(['code'=>200,'content'=>$page->content,'title'=>$page->title,'parent_id'=>$page->parent_id]);
     }
 
     /**
@@ -83,6 +84,7 @@ class PagesController extends Controller
 
         $page->title=$value['title'];
         $page->content=$value['content'];
+        $page->parent_id=$value['parent_id'];
         $page->slug=\Str::slug($value['title']);
         $page->save();
 
