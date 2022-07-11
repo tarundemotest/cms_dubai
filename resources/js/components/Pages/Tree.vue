@@ -1,8 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-12 mb-2 text-end">
-            <router-link :to='{name:"PagesAdd"}' class="btn btn-primary">Create</router-link>
-        </div>
+        
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
