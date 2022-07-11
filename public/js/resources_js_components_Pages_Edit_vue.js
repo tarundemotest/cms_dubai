@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resource/js/components/Pages/edit"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_components_Pages_Edit_vue"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Pages/Edit.vue?vue&type=script&lang=js":
 /*!****************************************************************************************************************************************************************************************************!*\

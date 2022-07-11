@@ -17,11 +17,12 @@
                             <div class="col-12 mb-2">
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <input type="text" class="form-control" v-model="page.description">
+                                    <input type="text" class="form-control" v-model="page.content">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary">Save</button>
+                                <router-link :to='{name:"pagesList"}' class="btn btn-success ms-1">Back</router-link>
                             </div>
                         </div>                        
                     </form>
@@ -38,14 +39,14 @@ export default {
         return {
             page:{
                 title:"",
-                description:""
+                content:""
             }
         }
     },
     methods:{
         async create(){
             await this.axios.post('/api/page',this.page).then(response=>{
-                this.$router.push({name:"pageList"})
+                this.$router.push({name:"pagesList"})
             }).catch(error=>{
                 console.log(error)
             })

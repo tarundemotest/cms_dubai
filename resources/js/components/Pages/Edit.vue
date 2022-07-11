@@ -17,11 +17,12 @@
                             <div class="col-12 mb-2">
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <input type="text" class="form-control" v-model="page.description">
+                                    <input type="text" class="form-control" v-model="page.content">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary">Update</button>
+                                <router-link :to='{name:"pagesList"}' class="btn btn-success ms-1">Back</router-link>
                             </div>
                         </div>                        
                     </form>
@@ -38,7 +39,7 @@ export default {
         return {
             page:{
                 title:"",
-                description:"",
+                content:"",
                 _method:"patch"
             }
         }
@@ -48,10 +49,10 @@ export default {
     },
     methods:{
         async showpage(){
-            await this.axios.get(`/api/page/${this.$route.params.id}`).then(response=>{
-                const { title, description } = response.data
+            await this.axios.get(`/api/page/${this.$route.params.id}`+'/edit').then(response=>{
+                const { title, content } = response.data
                 this.page.title = title
-                this.page.description = description
+                this.page.content = content
             }).catch(error=>{
                 console.log(error)
             })

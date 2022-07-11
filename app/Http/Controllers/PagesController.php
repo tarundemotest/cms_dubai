@@ -14,12 +14,8 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $categories = Pages::all(['id','parent_id','slug','title','content']);
-        echo "<pre>";
-        print_r($categories);
-        echo "</pre>";
-        exit;
-        return response()->json($categories);
+        $pages = Pages::all(['id','parent_id','slug','title','content']);
+        return response()->json($pages);
     }
 
     /**
@@ -40,7 +36,15 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $value=$request->all();
+
+        $page = new Pages; 
+        $page->title=$value['title'];
+        $page->content=$value['content'];
+        $page->slug=\Str::slug($value['title']);
+        $page->save();
+
+        return response()->json(['code'=>200,'success'=>true]);
     }
 
     /**
@@ -60,9 +64,10 @@ class PagesController extends Controller
      * @param  \App\Models\Pages  $pages
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pages $pages)
+    public function edit(Pages $page)
     {
-        //
+      
+        return response()->json(['code'=>200,'content'=>$page->content,'title'=>$page->title]);
     }
 
     /**
@@ -72,9 +77,16 @@ class PagesController extends Controller
      * @param  \App\Models\Pages  $pages
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pages $pages)
+    public function update(Request $request, Pages $page)
     {
-        //
+        $value=$request->all();
+
+        $page->title=$value['title'];
+        $page->content=$value['content'];
+        $page->slug=\Str::slug($value['title']);
+        $page->save();
+
+        return response()->json(['code'=>200,'success'=>true]);
     }
 
     /**
@@ -83,8 +95,9 @@ class PagesController extends Controller
      * @param  \App\Models\Pages  $pages
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pages $pages)
+    public function destroy(Pages $page)
     {
-        //
+        $page->delete();
+        return response()->json(['code'=>200,'success'=>true]);
     }
 }

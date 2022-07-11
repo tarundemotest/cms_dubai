@@ -1,9 +1,14 @@
-const Welcome = () => import('./components/Welcome.vue' /* webpackChunkName: "resource/js/components/welcome" */)
-const PagesList = () => import('./components/Pages/List.vue' /* webpackChunkName: "resource/js/components/Pages/list" */)
-const PagesCreate = () => import('./components/Pages/Add.vue' /* webpackChunkName: "resource/js/components/Pages/add" */)
-const PagesEdit = () => import('./components/Pages/Edit.vue' /* webpackChunkName: "resource/js/components/Pages/edit" */)
+import { createRouter, createWebHistory } from 'vue-router'
 
-export const routes = [
+
+const Welcome = () => import('./components/Welcome.vue') 
+const PagesList = () => import('./components/Pages/List.vue')
+const PagesCreate = () => import('./components/Pages/Add.vue')
+const PagesEdit = () => import('./components/Pages/Edit.vue')
+const PagesTree = () => import('./components/Pages/Tree.vue')
+
+
+const routes = [
     {
         name: 'home',
         path: '/',
@@ -23,5 +28,16 @@ export const routes = [
         name: 'PagesAdd',
         path: '/Pages/add',
         component: PagesCreate
+    },
+    {
+        name: 'pagesTree',
+        path: '/pagestree',
+        component: PagesTree
     }
-]
+  ];
+  
+  export default createRouter({
+    history: createWebHistory(),
+    routes
+})
+
